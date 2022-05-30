@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "680056019675",
+    "project_id": "projeto-firebase-f2b20",
+    "storage_bucket": "projeto-firebase-f2b20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680056019675:android:c2e07022c44a319b0acafe",
+        "android_client_info": {
+          "package_name": "com.example.logincafeteria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680056019675-3oppk1cq96nbkj2cliklvbfjqv57lggh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNDta-Mp4ZAmnwAAg8rjGYN-SPQfrdOZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680056019675-3oppk1cq96nbkj2cliklvbfjqv57lggh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

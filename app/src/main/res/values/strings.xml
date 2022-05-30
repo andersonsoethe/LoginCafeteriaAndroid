@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LoginCafeteria</string>
+    <string name="entrar">Entrar</string>
+    <string name="txt_cadastro">Crie uma conta clicando aqui </string>
+    <string name="txt_cadastre_se">Cadastre-se</string>
+    <string name="txt_cadastrar">Cadastrar</string>
+</resources>

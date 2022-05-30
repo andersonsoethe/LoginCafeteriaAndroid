@@ -1,0 +1,2 @@
+rootProject.name = "LoginCafeteria"
+include ':app'
