@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class FormLogin extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class FormLogin extends AppCompatActivity {
     private EditText edit_email, edit_senha;
     private Button bt_entrar;
     private ProgressBar progressBar;
-    String[] mensagens = {"Preencha todos os campos", "Login realizado com sucesso"};
+    String[] mensagens = {"Preencha todos os campos", "Login realizado com sucesso", "erro ao fazer login"};
 
 
     @Override
@@ -56,14 +57,13 @@ public class FormLogin extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 }else{
-                    AutenticarUser();
+                    AutenticarUser(v);
                 }
             }
         });
     }
 
-
-    private void AutenticarUser(){
+    private void AutenticarUser(View view){
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
 
@@ -79,9 +79,30 @@ public class FormLogin extends AppCompatActivity {
                             TelaPrincipal();
                         }
                     },3000);
+                }else {
+                    String erro;
+                    try {
+                        throw  task.getException();
+                    }catch (Exception e){
+                        erro = "Erro ao logar o usuário";
+                        Snackbar snackbar = Snackbar.make(view,erro,Snackbar.LENGTH_SHORT);
+                        snackbar.setBackgroundTint(Color.WHITE);
+                        snackbar.setTextColor(Color.BLACK);
+                        snackbar.show();
+                    }
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(currentUser != null){
+            TelaPrincipal();
+        }
     }
 
     private void TelaPrincipal(){
